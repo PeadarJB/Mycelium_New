@@ -96,3 +96,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+#partnerships h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
