@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .card {
     border: none;
-    min-height: 450px;
+    height: 500px !important;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .card-img-top {
@@ -110,6 +110,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
     font-weight: lighter;
     margin-top: auto;
+}
+.card-body p{
+    bottom: 0;
+
 }
 /* Partnerships */
 #partnerships {
@@ -146,6 +150,10 @@ h1, h2, h3, h4, h5, h6 {
 #social-proof {
     margin-top: 150px;
     margin-bottom: 150px;
+}
+#twitter-card {
+    min-height: 450px;
+    height: 100%;
 }
 /* Footer */
 footer {
