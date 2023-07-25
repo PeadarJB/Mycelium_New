@@ -6,7 +6,7 @@ window.onscroll = function() {
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("navbar").style.top = "0";
   } else {
-    document.getElementById("navbar").style.top = "-75px";
+    document.getElementById("navbar").style.top = "-80px";
   }
   prevScrollpos = currentScrollPos;
 }
@@ -49,3 +49,34 @@ $('#projectCarousel').on('slid.bs.carousel', function () {
     $('#project-description-2').fadeIn();
     $('#project-button').fadeIn();
 });
+
+function updateCarousel() {
+  var screenWidth = window.innerWidth;
+
+  if (screenWidth <= 600) {
+    // Move each card to its own 'carousel-item'
+    $('.news-card').each(function() {
+      var card = $(this);
+      var carouselItem = $('<div class="carousel-item"></div>');
+      carouselItem.append(card.clone());
+      $('#newsCarousel .carousel-inner').append(carouselItem);
+      card.remove();
+    });
+    // Add 'active' class to the first 'carousel-item'
+    $('#newsCarousel .carousel-item').first().addClass('active');
+  } else {
+    // Move all cards back to the first 'carousel-item'
+    var firstCarouselItem = $('#newsCarousel .carousel-item').first();
+    $('.news-card').each(function() {
+      var card = $(this);
+      firstCarouselItem.append(card.clone());
+      card.parent('.carousel-item').remove();
+    });
+  }
+}
+
+// Call the function when the page loads
+updateCarousel();
+
+// Call the function whenever the window is resized
+$(window).resize(updateCarousel);
