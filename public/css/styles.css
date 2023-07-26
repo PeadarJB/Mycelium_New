@@ -43,6 +43,9 @@ h1, h2, h3, h4, h5, h6 {
   .nav-link:hover {
     color: #9ca7ff !important;
   }
+  .nav-link.active {
+    color: #9ca7ff !important;
+  }
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h30M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
@@ -238,7 +241,7 @@ footer a {
     /* About */
     .about-content {
         font-size: 1.5rem;
-        text-align: center;
+        text-align: left;
     }
     .learn-btn {
         display: flex;
