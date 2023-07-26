@@ -50,33 +50,28 @@ $('#projectCarousel').on('slid.bs.carousel', function () {
     $('#project-button').fadeIn();
 });
 
-function updateCarousel() {
-  var screenWidth = window.innerWidth;
 
-  if (screenWidth <= 600) {
-    // Move each card to its own 'carousel-item'
-    $('.news-card').each(function() {
-      var card = $(this);
-      var carouselItem = $('<div class="carousel-item"></div>');
-      carouselItem.append(card.clone());
-      $('#newsCarousel .carousel-inner').append(carouselItem);
-      card.remove();
-    });
-    // Add 'active' class to the first 'carousel-item'
-    $('#newsCarousel .carousel-item').first().addClass('active');
-  } else {
-    // Move all cards back to the first 'carousel-item'
-    var firstCarouselItem = $('#newsCarousel .carousel-item').first();
-    $('.news-card').each(function() {
-      var card = $(this);
-      firstCarouselItem.append(card.clone());
-      card.parent('.carousel-item').remove();
-    });
-  }
-}
-
-// Call the function when the page loads
-updateCarousel();
-
-// Call the function whenever the window is resized
-$(window).resize(updateCarousel);
+// Owl Carousel
+$(function(){
+  $(".owl-carousel").owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:2, // changed to 1 item per slide on screens 768px and wider
+            nav:true  // enabled navigation on larger screens
+        },
+        1000:{
+            items:3,
+            nav:true,
+            loop:true,
+            margin:20
+        }
+    }
+  });
+});

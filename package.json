@@ -1,0 +1,14 @@
+{
+  "name": "mycelium_new",
+  "version": "1.0.0",
+  "description": "Mycelium Network website",
+  "main": "(index.html)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peadar JB",
+  "license": "ISC",
+  "dependencies": {
+    "owl.carousel": "^2.3.4"
+  }
+}

@@ -98,14 +98,49 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     font-size: 3rem;
 }
+#newsUpdates {
+    padding: 2em 0; /* some vertical padding for breathing space */
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    background: #fff; 
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1); 
+    height: 500px;
+}
+
+.news-card .card-img-top {
+    width: 100%;
+    object-fit: cover; 
+    height: 200px; 
+}
+
+.news-card .card-body {
+    padding: 1em; 
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card .card-title {
+    padding: 1em; 
+    margin-top: 10px; 
+    font-size: 1.25em; 
+    height: 5rem;
+}
+
+.news-card p {
+    flex: 1; 
+    font-weight: lighter;
+}
 .card {
     border: none;
     height: 500px !important;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
 }
 .card h5 {
     font-size: 1.25rem;
