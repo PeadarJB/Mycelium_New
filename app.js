@@ -55,6 +55,9 @@ $('#projectCarousel').on('slid.bs.carousel', function () {
 $(function(){
   $(".owl-carousel").owlCarousel({
     loop:true,
+    autoplay:true,
+    autoplayTimeout: 1500, 
+    autoplayHoverPause: true,
     margin:10,
     responsiveClass:true,
     responsive:{
@@ -63,8 +66,8 @@ $(function(){
             nav:true
         },
         600:{
-            items:2, // changed to 1 item per slide on screens 768px and wider
-            nav:true  // enabled navigation on larger screens
+            items:2, 
+            nav:true  
         },
         1000:{
             items:3,

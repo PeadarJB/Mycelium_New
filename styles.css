@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 150px;
 }
 #twitter-card {
-    min-height: 450px;
+    min-height: 40px;
     height: fit-content !important;
 }
 /* Footer */
@@ -259,6 +259,11 @@ footer a {
     }
     .card {
         height: fit-content !important;
+    }
+    /* Partnerships */
+    #partnerships img {
+        height: 150px;
+        margin: 0;
     }
     /* News and Updates */
     #news-updates {
