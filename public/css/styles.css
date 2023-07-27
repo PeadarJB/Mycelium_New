@@ -242,6 +242,9 @@ footer a {
         width: 100%;
     }
     /* About */
+    #about {
+        margin-bottom: 100px;
+    }
     .about-content {
         font-size: 1.5rem;
         text-align: left;
@@ -251,6 +254,9 @@ footer a {
         justify-content: center;
     }
     /* Projects */
+    #projects {
+        margin-bottom: 0px;
+    }
     #projects h1{
         text-align: center;
         font-size: 2.5rem;
@@ -268,12 +274,21 @@ footer a {
     }
     /* Partnerships */
     #partnerships img {
-        height: 150px;
+        height: 250px;
         margin: 0;
+    }
+    .min-height-h2 {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .min-height-p {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
     }
     /* News and Updates */
     #news-updates {
-        margin-top: 100px;
+        margin-top: 0px;
         margin-bottom: 100px;
     }
     #news-updates h1{
@@ -282,5 +297,9 @@ footer a {
     }
     #newsCarousel {
         height: fit-content !important;
+    }
+    /* Socials */
+    #twitter-card {
+        max-width: 350px;
     }
 }
