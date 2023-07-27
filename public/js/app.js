@@ -21,6 +21,11 @@ $(function() {
   });
 });
 
+// Light Dark theme button
+document.getElementById('theme-toggle').addEventListener('click', function() {
+  document.body.classList.toggle('dark-theme');
+});
+
 // Project Carousel
 
 $('#projectCarousel').on('slide.bs.carousel', function () {

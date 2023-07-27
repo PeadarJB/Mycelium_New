@@ -1,6 +1,27 @@
+:root {
+    /* Light theme colors */
+    --text-color-light: #000000;
+    --background-color-light: #ffffff;
+
+    /* Dark theme colors */
+    --text-color-dark: #ffffff;
+    --background-color-dark: #000000;
+}
+
 body {
+    /* Light theme styles */
+    color: var(--text-color-light);
+    background-color: var(--background-color-light);
     font-family: 'Lato', sans-serif !important;
-    background-color: #f2f2f2 !important;
+
+}
+
+body.dark-theme {
+    /* Dark theme styles */
+    color: var(--text-color-dark);
+    background-color: var(--background-color-dark);
+    font-family: 'Lato', sans-serif !important;
+
 }
 main {
     margin-left: 10% !important; 
