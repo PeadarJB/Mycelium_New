@@ -1,27 +1,27 @@
 :root {
     /* Light theme colors */
-    --text-color-light: #000000;
-    --background-color-light: #ffffff;
+    --text-color-light: #040b30;
+    --background-color-light: #dadef1;
 
     /* Dark theme colors */
-    --text-color-dark: #ffffff;
-    --background-color-dark: #000000;
+    --text-color-dark: #dadef1;
+    --background-color-dark: #040b30;
 }
 
 body {
     /* Light theme styles */
-    color: var(--text-color-light);
-    background-color: var(--background-color-light);
+    color: var(--text-color-light) !important;
+    background-color: var(--background-color-light) !important;
     font-family: 'Lato', sans-serif !important;
+    transition: all 1s
 
 }
 
 body.dark-theme {
     /* Dark theme styles */
-    color: var(--text-color-dark);
-    background-color: var(--background-color-dark);
+    color: var(--text-color-dark) !important;
+    background-color: var(--background-color-dark) !important;
     font-family: 'Lato', sans-serif !important;
-
 }
 main {
     margin-left: 10% !important; 
@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn {
     background-color: #040443 !important;
     border-color: #040443 !important;
+    border: 1px solid white !important;
 }
 .btn:hover {
     background-color: #17237c !important;
@@ -223,28 +224,13 @@ label {
     margin-top: 10px; 
     font-size: 1.25em; 
     height: 5rem;
+    color: #000000 !important;
 }
 
 .news-card p {
     flex: 1; 
     font-weight: lighter;
-}
-.card {
-    border: none;
-    height: 500px !important;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
-.card h5 {
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-.card p {
-    font-size: 1rem;
-    font-weight: lighter;
-    margin-top: auto;
-}
-.card-body p{
-    bottom: 0;
+    color: #000000 !important;
 }
 /* Partnerships */
 #partnerships {
@@ -272,6 +258,11 @@ label {
     min-height: 175px; 
     text-align: left;
     font-weight: lighter;
+}
+#partner-card {
+    min-height: 400px;
+    height: fit-content !important;
+    background: linear-gradient(180deg, #e7e7e7 0%, #FFFFFF 100%);
 }
 /* Social Proof */
 #social-proof h1{

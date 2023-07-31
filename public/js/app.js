@@ -10,7 +10,6 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
-
 // Setting active class for navbar
 var navLinks = document.querySelectorAll('.nav-item .nav-link');
 
@@ -25,12 +24,10 @@ navLinks.forEach(function(link) {
         link.classList.add('active');
     }
 });
-
 // Light Dark theme button
 document.getElementById('theme-toggle').addEventListener('click', function() {
   document.body.classList.toggle('dark-theme');
 });
-
 // Project Carousel
 
 $('#projectCarousel').on('slide.bs.carousel', function () {
@@ -68,7 +65,6 @@ $('#projectCarousel').on('slid.bs.carousel', function () {
     $('#project-description-2').fadeIn();
     $('#project-button').fadeIn();
 });
-
 
 // Owl Carousel
 $(function(){
