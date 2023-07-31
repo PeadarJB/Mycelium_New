@@ -11,13 +11,20 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
+// Setting active class for navbar
 $(function() {
-  var url = window.location.pathname, 
-  urlRegExp = new RegExp(url.replace(/\/$/,'') + "$"); 
-  $('.navbar-nav a').each(function(){
-      if(urlRegExp.test(this.href.replace(/\/$/,''))){
-          $(this).addClass('active');
-      }
+  // Get current path
+  var path = window.location.pathname;
+
+  // Get last part of the path
+  var page = path.split("/").pop();
+
+  // Add 'active' class to the matching link
+  $('.navbar-nav a').each(function() {
+    var href = $(this).attr('href');
+    if (href === page) {
+        $(this).addClass('active');
+    }
   });
 });
 
