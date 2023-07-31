@@ -12,20 +12,18 @@ window.onscroll = function() {
 }
 
 // Setting active class for navbar
-$(function() {
-  // Get current path
-  var path = window.location.pathname;
+var navLinks = document.querySelectorAll('.nav-item .nav-link');
 
-  // Get last part of the path
-  var page = path.split("/").pop();
+// Get current URL
+var currentUrl = window.location.href;
 
-  // Add 'active' class to the matching link
-  $('.navbar-nav a').each(function() {
-    var href = $(this).attr('href');
-    if (href === page) {
-        $(this).addClass('active');
+// Loop through the nav links
+navLinks.forEach(function(link) {
+    // Check if the href of the nav link matches the current URL
+    if (link.href === currentUrl) {
+        // Add the "active" class to the nav link
+        link.classList.add('active');
     }
-  });
 });
 
 // Light Dark theme button
