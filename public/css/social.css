@@ -65,3 +65,32 @@
         margin-bottom: 40px;
     }
 }
+@media (max-width: 1000px){
+    .social-intro p{
+        font-size: 1rem;
+    }
+    .social-intro h1{
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+    .social-intro .container{
+        margin-top: 50px !important;
+        margin-bottom: 100px;
+    }
+    .cause-img{
+        height: 200px;
+        margin-bottom: 25px;
+    }
+    .social-cause {
+        text-align: center;
+        margin-bottom: 75px;
+    }
+    .social-cause p{
+        font-size: 1rem;
+        font-weight: lighter;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
