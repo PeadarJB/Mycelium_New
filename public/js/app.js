@@ -24,9 +24,28 @@ navLinks.forEach(function(link) {
         link.classList.add('active');
     }
 });
-// Light Dark theme button
-document.getElementById('theme-toggle').addEventListener('click', function() {
-  document.body.classList.toggle('dark-theme');
+document.addEventListener("DOMContentLoaded", function() {
+  // Light Dark theme button
+  var themeToggle = document.getElementById('theme-toggle');
+
+  themeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark-theme');
+  });
+
+  // On page load, set theme based on localStorage value
+  if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+      themeToggle.checked = true;  // Make sure the toggle button is in the correct state
+  }
+
+  // When the toggle button is clicked, add/remove 'dark-theme' class and update localStorage
+  themeToggle.addEventListener('click', function() {
+      if (document.body.classList.contains('dark-theme')) {  // If 'dark-theme' class is added...
+          localStorage.setItem('theme', 'dark');
+      } else {  // If 'dark-theme' class is removed...
+          localStorage.setItem('theme', 'light');
+      }
+  });
 });
 // Project Carousel
 
