@@ -11,64 +11,58 @@ window.onscroll = function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   // Setting active class for navbar
-  var navLinks = document.querySelectorAll('.nav-item .nav-link');
+  const navLinks = document.querySelectorAll('.nav-item .nav-link');
 
   // Get current URL
-  var currentUrl = window.location.href;
+  const currentUrl = window.location.href;
 
   // Loop through the nav links
   navLinks.forEach(function(link) {
-    // Check if the href of the nav link matches the current URL
     if (link.href === currentUrl) {
-      // Add the "active" class to the nav link
       link.classList.add('active');
     }
   });
 });
 
 // Light Dark theme button
-var themeToggle = document.getElementById('theme-toggle');
+const themeToggle = document.getElementById('theme-toggle');
 
-// When the toggle button is clicked, toggle 'dark-theme' class and update localStorage
 themeToggle.addEventListener('click', function() {
   document.body.classList.toggle('dark-theme');
 
-  if (document.body.classList.contains('dark-theme')) {  // If 'dark-theme' class is added...
+  if (document.body.classList.contains('dark-theme')) {
     localStorage.setItem('theme', 'dark');
-  } else {  // If 'dark-theme' class is removed...
+  } else {
     localStorage.setItem('theme', 'light');
   }
 });
 
-// Get the current theme from localStorage
-var currentTheme = localStorage.getItem('theme');
+const currentTheme = localStorage.getItem('theme');
 
-// If the current theme in localStorage is 'dark'...
 if (currentTheme == 'dark') {
-  // ...add the 'dark-theme' class to the body
   document.body.classList.add('dark-theme');
 }
 
-// Smooth Scrolling
-$('#navbar a, .btn').on('click', function(event) {
-  if (this.hash !== '') {
-    event.preventDefault();
+// GSAP
+window.onload = function() {
+  gsap.from(".decoration-svg", {delay: 0.5, duration: 1, x: -500, opacity: 1,});
+  gsap.from(".decoration-svg-flip", {delay: 0.5, duration: 1, x: 500, opacity: 1,});
+};
 
-    const hash = this.hash;
-
-    $('html, body').animate(
-      {
-        scrollTop: $(hash).offset().top - 80
-      },
-      800
-    );
+gsap.to(".decoration-svg", {
+  x: 500,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".decoration-svg",
+    start: "bottom bottom", 
+    end: "start top",
+    scrub: true
   }
 });
 
 
 
 // Project Carousel
-
 $('#projectCarousel').on('slide.bs.carousel', function () {
     // When the slide starts, fade the text out
     $('#project-title').fadeOut();
@@ -110,7 +104,7 @@ $(function(){
   $(".owl-carousel").owlCarousel({
     loop:true,
     autoplay:true,
-    autoplayTimeout: 1500, 
+    autoplayTimeout: 2000, 
     autoplayHoverPause: true,
     margin:10,
     responsiveClass:true,
@@ -132,3 +126,4 @@ $(function(){
     }
   });
 });
+
