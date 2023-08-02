@@ -1,5 +1,3 @@
-// Navbar
-
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
@@ -10,43 +8,65 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
-// Setting active class for navbar
-var navLinks = document.querySelectorAll('.nav-item .nav-link');
 
-// Get current URL
-var currentUrl = window.location.href;
+document.addEventListener("DOMContentLoaded", function() {
+  // Setting active class for navbar
+  var navLinks = document.querySelectorAll('.nav-item .nav-link');
 
-// Loop through the nav links
-navLinks.forEach(function(link) {
+  // Get current URL
+  var currentUrl = window.location.href;
+
+  // Loop through the nav links
+  navLinks.forEach(function(link) {
     // Check if the href of the nav link matches the current URL
     if (link.href === currentUrl) {
-        // Add the "active" class to the nav link
-        link.classList.add('active');
+      // Add the "active" class to the nav link
+      link.classList.add('active');
     }
-});
-document.addEventListener("DOMContentLoaded", function() {
-  // Light Dark theme button
-  var themeToggle = document.getElementById('theme-toggle');
-
-  themeToggle.addEventListener('click', function() {
-    document.body.classList.toggle('dark-theme');
   });
+});
 
-  // On page load, set theme based on localStorage value
-  if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark-theme');
-      themeToggle.checked = true;  // Make sure the toggle button is in the correct state
+// Light Dark theme button
+var themeToggle = document.getElementById('theme-toggle');
+
+// When the toggle button is clicked, toggle 'dark-theme' class and update localStorage
+themeToggle.addEventListener('click', function() {
+  document.body.classList.toggle('dark-theme');
+
+  if (document.body.classList.contains('dark-theme')) {  // If 'dark-theme' class is added...
+    localStorage.setItem('theme', 'dark');
+  } else {  // If 'dark-theme' class is removed...
+    localStorage.setItem('theme', 'light');
   }
-
-  // When the toggle button is clicked, add/remove 'dark-theme' class and update localStorage
-  themeToggle.addEventListener('click', function() {
-      if (document.body.classList.contains('dark-theme')) {  // If 'dark-theme' class is added...
-          localStorage.setItem('theme', 'dark');
-      } else {  // If 'dark-theme' class is removed...
-          localStorage.setItem('theme', 'light');
-      }
-  });
 });
+
+// Get the current theme from localStorage
+var currentTheme = localStorage.getItem('theme');
+
+// If the current theme in localStorage is 'dark'...
+if (currentTheme == 'dark') {
+  // ...add the 'dark-theme' class to the body
+  document.body.classList.add('dark-theme');
+}
+
+// Smooth Scrolling
+$('#navbar a, .btn').on('click', function(event) {
+  if (this.hash !== '') {
+    event.preventDefault();
+
+    const hash = this.hash;
+
+    $('html, body').animate(
+      {
+        scrollTop: $(hash).offset().top - 80
+      },
+      800
+    );
+  }
+});
+
+
+
 // Project Carousel
 
 $('#projectCarousel').on('slide.bs.carousel', function () {
