@@ -30,10 +30,7 @@ main {
     margin-left: 10% !important; 
     margin-right: 10% !important;
 }
-#hero {
-    margin-left: 10% !important; 
-    margin-right: 10% !important;
-}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Jura', sans-serif;
 }
@@ -47,6 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
   /* Navbar */
   .navbar {
+    box-sizing: border-box;
     transition: top 0.6s;
     padding-left: 10% !important;
     padding-right: 10% !important;
@@ -464,6 +462,7 @@ footer a {
     }
 }
 @media (max-width: 1000px) {
+   
     .navbar {
         padding-left: 5% !important;
         padding-right: 5% !important;

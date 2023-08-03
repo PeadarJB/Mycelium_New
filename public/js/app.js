@@ -1,49 +1,60 @@
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-80px";
+// Navbar scroll function
+function handleNavbarScroll() {
+  let prevScrollpos = window.pageYOffset;
+  
+  window.onscroll = function() {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-80px";
+    }
+    prevScrollpos = currentScrollPos;
   }
-  prevScrollpos = currentScrollPos;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Setting active class for navbar
+// Function for setting active class for navbar
+function handleActiveClassForNavbar() {
   const navLinks = document.querySelectorAll('.nav-item .nav-link');
-
-  // Get current URL
   const currentUrl = window.location.href;
 
-  // Loop through the nav links
   navLinks.forEach(function(link) {
     if (link.href === currentUrl) {
       link.classList.add('active');
     }
   });
-});
-
-// Light Dark theme button
-const themeToggle = document.getElementById('theme-toggle');
-
-themeToggle.addEventListener('click', function() {
-  document.body.classList.toggle('dark-theme');
-
-  if (document.body.classList.contains('dark-theme')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
-  }
-});
-
-const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme == 'dark') {
-  document.body.classList.add('dark-theme');
 }
 
-// GSAP Animations
+// Function for handling theme
+function handleTheme() {
+  const themeToggle = document.getElementById('theme-toggle');
+
+  themeToggle.addEventListener('click', function() {
+    document.body.classList.toggle('dark-theme');
+  });
+
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeToggle.checked = true;
+  }
+
+  themeToggle.addEventListener('click', function() {
+    if (document.body.classList.contains('dark-theme')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+}
+
+// Initialize all
+document.addEventListener("DOMContentLoaded", function() {
+  handleNavbarScroll();
+  handleActiveClassForNavbar();
+  handleTheme();
+});
+
+  // GSAP Animations
 
 window.onload = function() {
   gsap.from(".decoration-svg", {delay: 0.5, duration: 1, x: -500, opacity: 1,});
@@ -72,17 +83,62 @@ gsap.to(".decoration-svg-flip", {
   }
 });
 
-gsap.from(".decoration-svg-2", { 
-  x: 500, 
-  opacity: 1,
+gsap.fromTo(".decoration-svg-2", 
+  {x: 300},  // Starting state
+  {x: 0,    // Ending state
   scrollTrigger: {
     trigger: ".decoration-svg-2",
-    start: "bottom bottom",
-    end: "bottom top",
+    start: "top-=200px bottom", // Starts when the top of the element hits the bottom of the viewport
     
     scrub: true
   }
 });
+
+gsap.fromTo("#news-decoration",
+  {x: -500},  // Starting state
+  {x: 0,    // Ending state
+  scrollTrigger: {
+    trigger: "#news-decoration",
+    start: "top bottom", // Starts when the top of the element hits the bottom of the viewport
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+gsap.fromTo("#partner-decoration",
+  {x: 500, opacity: 0},  // Starting state
+  {x: 0, opacity: 1,    // Ending state
+  scrollTrigger: {
+    trigger: "#partner-decoration",
+    start: "top bottom", // Starts when the top of the element hits the bottom of the viewport
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+gsap.fromTo("#social-decoration",
+  {x: 500},  // Starting state
+  {x: 0,    // Ending state
+  scrollTrigger: {
+    trigger: "#social-decoration",
+    start: "top bottom", // Starts when the top of the element hits the bottom of the viewport
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+gsap.fromTo("#social-decoration-flip",
+  {x: -500},  // Starting state
+  {x: 0,    // Ending state
+  scrollTrigger: {
+    trigger: "#social-decoration-flip",
+    start: "top bottom", // Starts when the top of the element hits the bottom of the viewport
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+
 
 
 
