@@ -24,6 +24,7 @@ body.dark-theme {
     background-color: var(--background-color-dark) !important;
     font-family: 'Lato', sans-serif !important;
     overflow-x: hidden;
+    transition: all 1s;
 }
 main {
     margin-left: 10% !important; 
@@ -217,7 +218,6 @@ label {
   body.dark-theme .decoration-svg, body.dark-theme .decoration-svg-flip, body.dark-theme .decoration-svg-2, 
   body.dark-theme #news-decoration, body.dark-theme #partner-decoration, body.dark-theme #social-decoration, body.dark-theme #social-decoration-flip {
     stroke: var(--svg-color-dark);
-    transition: all 1.2s;
   }
 /* About */
 .about-content {

@@ -43,22 +43,47 @@ if (currentTheme == 'dark') {
   document.body.classList.add('dark-theme');
 }
 
-// GSAP
+// GSAP Animations
+
 window.onload = function() {
   gsap.from(".decoration-svg", {delay: 0.5, duration: 1, x: -500, opacity: 1,});
   gsap.from(".decoration-svg-flip", {delay: 0.5, duration: 1, x: 500, opacity: 1,});
 };
 
 gsap.to(".decoration-svg", {
-  x: 500,
-  opacity: 0,
+  x: -500,
+  opacity: 1,
   scrollTrigger: {
     trigger: ".decoration-svg",
     start: "bottom bottom", 
-    end: "start top",
+    end: "bottom top",
     scrub: true
   }
 });
+
+gsap.to(".decoration-svg-flip", {
+  x: 500,
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".decoration-svg",
+    start: "bottom bottom", 
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+gsap.from(".decoration-svg-2", { 
+  x: 500, 
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".decoration-svg-2",
+    start: "bottom bottom",
+    end: "bottom top",
+    
+    scrub: true
+  }
+});
+
 
 
 
