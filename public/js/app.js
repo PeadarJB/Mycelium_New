@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 // Navbar scroll function
 function handleNavbarScroll() {
   let prevScrollpos = window.pageYOffset;
