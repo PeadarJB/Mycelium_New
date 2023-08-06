@@ -288,8 +288,8 @@ label {
     margin-top: 150px;
     margin-bottom: 150px;
 }
-#partnerships img {
-    height: 300px;
+.partner-img {
+    height: 300px !important;
     margin: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
@@ -302,20 +302,16 @@ label {
     text-align: center;
     font-size: 3rem;
 }
-.btn-magic-square {
-    background: none;
-    border: none;
-    padding: 0;
-    width: 100px; /* set this to your desired width */
-    height: 100px; /* set this to your desired height */
-    display: block;
-  }
-  .btn-magic-square img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+.magic-btn {
+    padding: 0 !important;
+}
+.magic-btn img {
+    height: 2.5rem;
+}
+.magic-btn img:hover {
+    opacity: 0.8;
+}
+
 .min-height-h2 {
     min-height: 75px; 
 }
