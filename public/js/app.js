@@ -140,6 +140,30 @@ gsap.fromTo("#social-decoration-flip",
   }
 });
 
+gsap.from(".about-content-container:first-child .about-content", {
+  duration: 1,
+  opacity: 0,
+  y: 30,
+  x: -30,
+  stagger: 0.3
+});
+
+// Fade-in animation for other paragraphs when they appear on screen
+gsap.utils.toArray(".about-content-container:not(:first-child) .about-content").forEach(function(elem) {
+  gsap.from(elem, {
+      scrollTrigger: {
+          trigger: elem,
+          start: "top 60%", // start when the top of the element hits 90% from the top of the viewport
+          end: "bottom 30%", // end when the bottom of the element hits 60% from the top of the viewport
+          toggleActions: "play none none reverse" 
+      },
+      duration: 1,
+      opacity: 0,
+      y: 30,
+      x: -30,
+  });
+});
+
 
 
 
@@ -196,8 +220,8 @@ $(function(){
             items:1,
             nav:true
         },
-        600:{
-            items:1, 
+        500:{
+            items:2, 
             nav:true  
         },
         1000:{

@@ -82,6 +82,8 @@
     .cause-img{
         height: 200px;
         margin-bottom: 25px;
+        width: fit-content;
+        object-fit: contain !important;
     }
     .social-cause {
         text-align: center;

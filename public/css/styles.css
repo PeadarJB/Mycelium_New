@@ -443,6 +443,9 @@ footer a {
         height: fit-content !important;
     }
     /* Partnerships */
+    #partnerships {
+        padding: 0 !important;
+    }
     #partnerships img {
         height: 250px;
         margin: 0;
@@ -558,6 +561,7 @@ footer a {
     .min-height-h2 {
         margin-bottom: 20px;
         width: 100%;
+        font-size: 2rem !important;
     }
     .min-height-p {
         width: 100%;
