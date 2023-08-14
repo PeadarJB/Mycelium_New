@@ -14,7 +14,7 @@
     margin-bottom: 200px !important;
 }
 .project-img {
-    height: 600px !important;
+    height: 500px !important;
     width: 100% !important;
     object-fit: cover !important;
     border: 1px solid #ddd; 
@@ -55,7 +55,8 @@
         width: 100%;
     }
     .project-img {
-        height: 200px !important;
+        height: 150px !important;
+        object-fit: cover !important;
     }
 }
 @media (min-width: 601px) and (max-width: 1024px){
