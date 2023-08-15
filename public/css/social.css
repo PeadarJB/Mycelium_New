@@ -72,8 +72,8 @@
     .social-intro h1{
         font-size: 3.5rem;
         font-weight: bold;
-        margin-top: 20px;
-        margin-bottom: 25px;
+        margin-top: 5rem !important;
+        margin-bottom: 2rem !important;
     }
     .social-intro .container{
         margin-top: 50px !important;

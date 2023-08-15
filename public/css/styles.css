@@ -1,13 +1,13 @@
 :root {
     /* Light theme colors */
     --text-color-light: #040b30;
-    --background-color-light: #dadef1;
+    --background-color-light: #f7f8ff;
     --svg-color-light: #040b30;
 
     /* Dark theme colors */
-    --text-color-dark: #dadef1;
+    --text-color-dark: #f7f8ff;
     --background-color-dark: #040b30;
-    --svg-color-dark: #dadef1;
+    --svg-color-dark: #f7f8ff;
 }
 body {
     /* Light theme styles */
