@@ -58,10 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // GSAP Animations
 
-window.onload = function() {
-  gsap.from(".decoration-svg", {delay: 0.5, duration: 1, x: -500, opacity: 1,});
-  gsap.from(".decoration-svg-flip", {delay: 0.5, duration: 1, x: 500, opacity: 1,});
-};
+
 
 gsap.to(".decoration-svg", {
   x: -500,

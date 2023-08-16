@@ -506,21 +506,20 @@ footer a {
         top: 85%;
         width: 300px;
      }
+     .decoration-svg-2 {
+        display: none;
+     }
      #news-decoration {
-        top: 285%;
-        width: 300px;
+        display: none;
      }
     #partner-decoration {
-            top: 385%;
-            width: 300px;
+        display: none;
     }
     #social-decoration {
-        top: 485%;
-        width: 300px;
+        display: none;
     }
     #social-decoration-flip {
-        top: 485%;
-        width: 300px;
+        display: none;
     }
     /* About */
     #about {
@@ -576,9 +575,6 @@ footer a {
     #news-updates h1{
         text-align: center;
         font-size: 2.5rem;
-    }
-    #newsCarousel {
-        height: fit-content !important;
     }
     /* Socials */
     #twitter-card {
